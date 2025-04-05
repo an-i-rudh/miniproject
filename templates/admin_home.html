@@ -1,0 +1,17 @@
+{% extends "admin/master.html" %}
+
+{% block body %}
+<h1>Admin Dashboard</h1>
+<p>Welcome, {{ current_user.username }}!</p>
+
+<div>|
+    <a href="{{ url_for('admin_logout') }}">Logout</a>
+</div>
+
+<h2>Manage Data</h2>
+<ul>
+    <li><a href="{{ url_for('admin.index') }}">View Admin Panel</a></li>
+    <li><a href="{{ url_for('admin.index') }}">Manage Users</a></li>
+    <li><a href="{{ url_for('admin.index') }}">Manage Services</a></li>
+</ul>
+{% endblock %}

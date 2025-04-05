@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aided Schools in Adimali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .school {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        img {
+            width: 640px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aided Schools in Adimali</h1>
+    
+    <div class="school">
+        <h2>Fathima Matha Girls Higher Secondary School</h2>
+        <img src="{{ url_for('static', filename='fathima matha ghss.jpg')}}" alt="Fathima Matha GHSS">
+        <p>A well-established girls' higher secondary school providing quality education in Adimali.</p>
+    </div>
+    
+    <div class="school">
+        <h2>SNDP VHSS Adimali</h2>
+        <img src="{{ url_for('static', filename='sndpvhss adimali.jpg')}}" alt="SNDP VHSS Adimali">
+        <p>An aided vocational higher secondary school in Adimali, offering various educational streams.</p>
+    </div>
+</body>
+</html>

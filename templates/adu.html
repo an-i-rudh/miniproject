@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXPLORING COLOURS OF ADIMALI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #fff;
+        scroll-behavior: smooth;
+      }
+  
+                  /* Styling for the navigation bar */
+                  .navbar {
+            position: fixed;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px; /* Reduce gap between buttons */
+            background: transparent;
+            padding: 5px 10px; /* Reduce padding to make navbar smaller */
+            border-radius: 30px; /* Slightly smaller rounded corners */
+            transition: background 0.3s, color 0.3s;
+            z-index: 1000;
+        }
+        
+        /* Styling for navbar links */
+        .navbar a {
+            color: rgb(255, 255, 255); /* Default text color */
+            text-decoration: none; /* Removes underline */
+            padding: 12px 18px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            text-transform: uppercase;         
+          }
+        
+        /* Hover effect for navbar links */
+        .navbar a:hover {
+            background: rgba(0, 0, 0, 0.1); /* Slight background highlight on hover */
+            transform: scale(1.1); /* Slightly enlarges the link */
+        }
+        
+        /* Navbar style when scrolling into dark sections */
+        .navbar.scrolled-black {
+            background: black;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More depth when scrolled */
+        }
+        
+        /* Changes navbar text color when scrolled into dark sections */
+        .navbar.scrolled-black a {
+            color: white;
+        }
+
+        .auth-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    position: absolute;
+    top: 12px;
+    right: 78px;
+}
+
+.auth-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-button:hover {
+    background-color: #6f767d;
+}
+
+        .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+      
+      /* ONLY ADIMALI SECTION */
+      .only-adimali {
+        background: url("{{url_for('static', filename='adimali9.png')}}") no-repeat center center/cover;
+        
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 50px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        
+  border-bottom-right-radius: 100px;
+      }
+
+      .only-adimali::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .only-adimali .content {
+
+        position: relative;
+        max-width: 600px;
+        z-index: 2;
+        
+        align-items: center;
+        
+      }
+
+     
+
+      h1 {
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      /* SECTIONS */
+      
+.section {
+    padding: 50px;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    text-align: center;
+    color: #000;
+    font-size: 28px;
+}
+
+.service-container,
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.service-item {
+    text-align: center;
+    width: 45%;
+    position: relative;
+}
+
+.service-item h3 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.service-box,
+.gallery-box {
+    background-color: #fff;
+    color: black;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 450px;
+   
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-box img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-box:hover img {
+    transform: scale(1.01);
+}
+
+.service-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.service-container.irregular {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+
+       /* FOOTER */
+       .footer {
+            background-color: black;
+            color: white;
+            padding: 50px 20px;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .team-member {
+            text-align: center;
+            padding: 5px;
+            font-family: 'Verdana', sans-serif;
+            width: 200px;
+            height: 240px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        .footer-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .footer-section {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 5px;
+        }
+        .logofoot img {
+            width: 90px;
+        }
+      /*Gallery sec*/
+      
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.album .responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto; /* Centers the gallery horizontally */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+}
+
+.album .responsive-container-block.bg {
+  max-width: 1320px;
+  margin: 0 auto; /* Centers the gallery */
+  justify-content: center; /* Aligns images in center */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.album .responsive-container-block.img-cont {
+  flex-direction: column;
+  max-width: 33.3%;
+  min-height: auto;
+  margin: 0 auto; /* Centers image containers */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.album .img {
+  width: 100%;
+  margin: 10px auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .album .responsive-container-block.img-cont {
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .album .img.img-big {
+    max-width: 49%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .album .img {
+    max-width: 94%;
+    margin: 0 auto;
+  }
+
+  .album .responsive-container-block.img-cont {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+.outer-container {
+            display: flex;
+            margin-left: 6%;
+            align-items: center;
+            width: 90%;
+            height: 600px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .text {
+            width: 35%;
+            padding: 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: right;
+        }
+        .scroll-container {
+            width: 65%;
+            height: 100%;
+            overflow-y: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+            padding-top: 20px;
+        }
+        .container {
+            width: 90%;
+            min-height: 150px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fafafa;
+            text-align: center;
+            font-size: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .container.fading {
+            opacity: 0.3;
+            transform: translateY(-50px) scale(0.95);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .date{
+            font-size: small;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            
+        }
+
+        strong {
+        font-family: 'montserrat';
+        font-size: 20px;
+        font-weight: bold;
+        color: #5d5d5d;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+
+
+    google_translate_element {
+        background-color: black;  /* Black background */
+        width: 200px;             /* Reduced width */
+        padding: 10px;            /* Add some padding */
+        border-radius: 5px;       /* Rounded corners for aesthetics */
+        color: white;             /* Text color */
+    }
+
+    /* Style the dropdown */
+    .goog-te-combo {
+        background: white;        /* Dropdown background */
+        color: black;             /* Dropdown text color */
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+
+      
+
+      <section id="home" class="only-adimali">
+        <div class="auth-container">
+          <a class="auth-button" href="{{ url_for('login') }}">Login</a>
+          <a class="auth-button" href="{{ url_for('signup') }}">Register</a>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='adimaligatewayofmunnar.png')}}" alt="image will appear soon" width="65" height="65">
+    </div>
+        <div class="content">
+          
+            <img src="{{url_for('static',filename='adimaligatewayofmunnarlogo.png')}}" alt="hai there">
+            <p>Adimali, a beautiful town nestled in the Western Ghats of Kerala, is known for its lush greenery, spice plantations, and vibrant local culture.</p>
+        </div>
+        <div class="navbar" id="navbar">
+          <a href="#home">Home</a> <!-- Link to Home section -->
+          <a href="#local-insights">Local Insights</a> <!-- Link to Local Insights section -->
+          <a href="#services">Services</a> <!-- Link to Services section -->
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact Us</a>
+          <div id="google_translate_element"></div>
+      </div>
+    </section>
+    
+    <section id="local-insights" class="section">
+      <h2>Local Insights</h2>
+      <div class="service-container irregular">
+          <div class="service-item">
+              <a href="{{ url_for('transport') }}" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='transport.jpg') }}" alt="Transport">
+                      <h3>Transport</h3>
+                      <p>Explore transport options and connectivity in Adimali.</p>
+                  </div>
+              </a>
+          </div>
+          <div class="service-item">
+              <a href="{{ url_for('tourism') }}" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='tourism.jpg') }}" alt="Tourism">
+                      <h3>Tourism</h3>
+                      <p>Discover the beautiful sights and attractions of Adimali.</p>
+                  </div>
+              </a>
+          </div>
+          <div class="service-item">
+              <a href="{{ url_for('local_workforce') }}" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='workforce.jpg') }}" alt="Local Workforce">
+                      <h3>Local Workforce</h3>
+                      <p>Find skilled workforce and professionals in Adimali.</p>
+                  </div>
+              </a>
+          </div>
+          <div class="service-item">
+              <a href="spices.html" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='spices and plantation.jpg') }}" alt="Spices & Plantation">
+                      <h3>Spices & Plantation</h3>
+                      <p>Explore the spices and plantations of Adimali.</p>
+                  </div>
+              </a>
+          </div>
+
+
+          <div class="service-item">
+            <a href="{{ url_for('education')}}" style="text-decoration: none;">
+              <div class="service-box"><img src="{{ url_for('static', filename='education.jpg')}}" alt="More">
+                  <h3>Education</h3>
+                  <p>Discover the educational institutions near Adimali here.</p>
+              </div></a> 
+          </div>
+
+
+          <div class="service-item">
+              <a href="more.html" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='tourism.jpg') }}" alt="More">
+                      <h3>More</h3>
+                      <p>Discover more about Adimali's unique offerings.</p>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </section>
+  
+  <section id="services" class="section">
+      <h2>Services</h2>
+      <p>Find useful local resources, services, and facilities.</p>
+      <div class="service-container irregular">
+          <div class="service-item">
+              <a href="{{ url_for('emergency') }}" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='emergency.jpg') }}" alt="Emergency Services">
+                      <h3>Emergency Services</h3>
+                      <p>Access emergency services and support in Adimali.</p>
+                  </div>
+              </a>
+          </div>
+          <div class="service-item">
+              <a href="{{ url_for('healthcare') }}" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='emergency and health.jpg') }}" alt="Healthcare Services">
+                      <h3>Healthcare Services</h3>
+                      <p>Find healthcare facilities and hospitals near you.</p>
+                  </div>
+              </a>
+          </div>
+          <div class="service-item">
+              <a href="publicutility.html" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='publicutility.jpg') }}" alt="Public Utility Services">
+                      <h3>Public Utility Services</h3>
+                      <p>Find essential services that support daily life.</p>
+                  </div>
+              </a>
+          </div>
+          <div class="service-item">
+              <a href="government.html" style="text-decoration: none;">
+                  <div class="service-box">
+                      <img src="{{ url_for('static', filename='governemnt.jpg') }}" alt="Government and Administrative Services">
+                      <h3>Government and Administrative Services</h3>
+                      <p>Know the government-related services and features.</p>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </section>
+  
+  <section id="gallery" class="section">
+      <h2>Gallery</h2>
+      <div class="album">
+          <div class="responsive-container-block bg">
+              <div class="responsive-container-block img-cont">
+                  <img class="img" src="{{ url_for('static', filename='28.jpg') }}">
+                  <img class="img" src="{{ url_for('static', filename='20.jpg') }}">
+                  <img class="img img-last" src="{{ url_for('static', filename='19.JPG') }}">
+              </div>
+              <div class="responsive-container-block img-cont">
+                  <img class="img img-big" src="{{ url_for('static', filename='30.JPG') }}">
+                  <img class="img img-big img-last" src="{{ url_for('static', filename='34.JPG') }}">
+                  <img class="img img-big" src="{{ url_for('static', filename='6.jpg') }}">
+              </div>
+              <div class="responsive-container-block img-cont">
+                  <img class="img" src="{{ url_for('static', filename='13.JPG') }}">
+                  <img class="img" src="{{ url_for('static', filename='15.jpg') }}">
+                  <img class="img" src="{{ url_for('static', filename='29.JPG') }}">
+              </div>
+          </div>
+      </div>
+  </section>
+  
+</section>
+<section id="announcements" class="section">
+  <h2>Latest Announcements</h2>
+  <div class="outer-container">
+      <div class="text">Stay updated with the latest announcements</div>
+      <div class="scroll-container" id="scroll-container">
+          {% for announcement in announcements %}
+              <div class="container">
+                  <strong >{{ announcement.title }}</strong>
+                  <p>{{ announcement.message }}</p>
+                  <p class="date">Posted on: {{ announcement.created_at }}</p>
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+</section>
+  <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>Email: contact@adimali.com</p>
+      <p>Phone: +XXXXXXXXXX</p>
+      <p>Learn more about our mission and vision for Adimali.</p>
+  </section>
+  
+  <footer class="footer">
+    <div class="team-container">
+      <div class="team-member">
+          <img src="{{ url_for('static', filename='pinarai.webp')}}" alt="Person 1">
+          <p>Pinarayi Vijayan </p>
+          <p>Chief Minister of Kerala                                                      _</p>
+      </div>
+      <div class="team-member">
+          <img src="{{ url_for('static', filename='rajesh.webp')}}" alt="Person 2">
+          <p>M B Rajesh</p>
+          <p>Minister for Local Self Governments of Kerala</p>
+      </div>
+      <div class="team-member">
+          <img src="{{ url_for('static', filename='deen.webp')}}" alt="Person 3">
+          <p>Dean Kuriakose</p>
+          <p>Member of Parliament, Idukki</p>
+      </div>
+      <div class="team-member">
+          <img src="{{ url_for('static', filename='raja.webp')}}" alt="Person 4">
+          <p>Adv.A Raja</p>
+          <p>Member of Legislative Assembly, Devikulam</p>
+      </div>
+      <div class="team-member">
+          <img src="{{ url_for('static', filename='soumya.jpg')}}" alt="Person 5">
+          <p>Soumya Anil</p>
+          <p>President Adimali Gramapanchayat</p>
+      </div>
+  </div>
+    <div class="footer-section logofoot">
+        <img src="{{ url_for('static', filename='adimaligatewayofmunnar.png')}}" alt="Logo">
+        <p>Adimali is a scenic town nestled between Kochi and Munnar in the Idukki district of Kerala, India. Known for its rich history and natural beauty, Adimali became a significant settlement in the mid-20th century. The town is strategically located along National Highway 49, providing easy access to breathtaking destinations like Munnar, Cheeyappara, and Valara waterfalls. The region is famous for its pepper cultivation and is home to key infrastructure projects like Kallarkutti Dam (1961) and Ponmudi Dam (1963), which contribute to Kerala's hydroelectric power. Surrounded by serene villages like Kuthirayalla, Pettimudi, and Maankulam, Adimali serves as a gateway to both Kerala’s lush greenery and Tamil Nadu’s border regions.</p>
+    </div>
+    <div class="footer-section">
+        <h3>Contact Us</h3>
+        <a href="contact.html">contact us : adimaliinfo@gmail.com</a>
+    </div>
+    <div class="footer-section social-icons">
+        <h3>Follow Us</h3>
+        <a href="#"><img src="{{ url_for('static', filename='instagram.png')}}" alt="Instagram"></a>
+        <a href="#"><img src="{{ url_for('static', filename='facebook.png')}}" alt="Facebook"></a>
+        <a href="#"><img src="{{ url_for('static', filename='twitter.png')}}" alt="Twitter"></a>
+    </div>
+    <div class="footer-section">
+        <a href="#">Cookie Policy</a> |
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+</footer>
+
+
+  <script>
+    window.addEventListener("scroll", function() {
+        let navbar = document.getElementById("navbar");
+        let sections = document.querySelectorAll(".section");
+        let isScrolled = false;
+        
+        sections.forEach(section => {
+            let rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                if (section.id === "local-insights" || section.id === "services" || section.id === "gallery" || section.id === "announcements") {
+                    navbar.classList.add("scrolled-black");
+                    isScrolled = true;
+                }
+            }
+        });
+        
+        if (!isScrolled) {
+            navbar.classList.remove("scrolled-black");
+        }
+    });
+    
+    /* Smooth scrolling effect when clicking navbar links */
+    document.querySelectorAll('.navbar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            let targetId = this.getAttribute('href');
+            let targetSection = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth' /* Enables smooth scrolling animation */
+            });
+        });
+    });
+    const scrollContainer = document.getElementById('scroll-container');
+    const containers = document.querySelectorAll('.container');
+
+    function updateVisibility() {
+        const outerContainerRect = scrollContainer.getBoundingClientRect();
+        const outerContainerCenter = outerContainerRect.top + outerContainerRect.height / 2;
+
+        containers.forEach((container) => {
+            const rect = container.getBoundingClientRect();
+            const containerCenter = rect.top + rect.height / 2;
+
+            container.classList.remove('visible', 'fading');
+
+            if (containerCenter > outerContainerRect.top && containerCenter < outerContainerRect.bottom) {
+                container.classList.add('visible');
+            } else {
+                container.classList.add('fading');
+            }
+        });
+    }
+    scrollContainer.addEventListener('scroll', updateVisibility);
+    updateVisibility(); // Initial check
+</script>   
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en', includedLanguages: 'en,ml', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+  </body>
+  </html>    
+    

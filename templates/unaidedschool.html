@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unaided Schools in Adimali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .school {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        img {
+            width: 640px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unaided Schools in Adimali</h1>
+    
+    <div class="school">
+        <h2>SVVEMS Adimali</h2>
+        <img src="{{ url_for('static', filename='svvemsadimali.jpeg')}}" alt="SVVEMS Adimali">
+        <p>An unaided school in Adimali, providing quality education with modern facilities.</p>
+    </div>
+    
+    <div class="school">
+        <h2>Vishwadeepthi Public School</h2>
+        <img src="{{ url_for('static', filename='vishwadeepthipublicschool.jpg')}}" alt="Vishwadeepthi Public School">
+        <p>A reputed unaided public school in Adimali, known for its academic excellence and extracurricular activities.</p>
+    </div>
+</body>
+</html>

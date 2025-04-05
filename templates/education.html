@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Institutions - Adimali Grama Panchayat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .category {
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .category:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #0056b3, #003f7f);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Educational Institutions</h1>
+        <h2>Adimali Grama Panchayat</h2>
+        <div class="category" onclick="window.location.href = '/govschool'">Government Schools</div>
+        <div class="category" onclick="window.location.href = '/aidedschool'">Aided Schools</div>
+        <div class="category" onclick="window.location.href = '/unaidedschool'">Unaided Schools</div>
+        <div class="category" onclick="window.location.href = ''">Colleges</div>
+    </div>
+    
+    <script>
+        function showMessage(category) {
+            alert(category + ' - More details will be added soon.');
+        }
+    </script>
+</body>
+</html>

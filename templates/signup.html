@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: url('{{ url_for("static", filename="adimali5.jpg") }}') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .signup-card {
+            background: rgba(255, 255, 255, 0.1);  /* Transparent effect */
+            backdrop-filter: blur(10px);  /* Blur effect for glassmorphism */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            transition: all 0.3s ease;
+        }
+
+        .signup-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon img {
+            width: 50px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 15px 0 5px;
+            color: white;
+        }
+
+        .alert-container {
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .input-group {
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.5);  /* Slight transparency */
+            color: #000;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: rgb(61, 10, 214);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #001495;
+        }
+
+        .login-link {
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+            color: rgb(10, 14, 106);
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <div class="signup-card">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='adimaligatewayofmunnar.png')}}" alt="Sign Up Icon">
+            </div>
+            <h2>Create an Account</h2>
+
+            <div class="alert-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            <form action="{{ url_for('signup') }}" method="POST">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="Password" required minlength="8">
+                    <span class="eye-icon" onclick="togglePassword()">👁️</span>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+
+            <a href="{{ url_for('login') }}" class="login-link">Already have an account? Login</a>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>

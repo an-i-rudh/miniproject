@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adimaly Tourism</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='tourismadmali.css')}}" />
+  </head>
+  <body>
+    <header>
+      <h1>The Gateway Of Munnar</h1>
+      <img
+       src="{{ url_for('static', filename='adimalilogo.jpg')}}"
+        class="header-overlay-image"
+        alt="Adimaly Logo"
+      />
+    </header>
+
+    <nav class="navbar">
+      <a href="#Waterfalls">Waterfalls</a>
+      <a href="#Viewpoints">Viewpoints</a>
+      <a href="#bridge">Bridges</a>
+      <a href="#cave">Caves</a>
+    </nav>
+
+    <section id="Waterfalls">
+      <div class="content-image-container left">
+        <img src="{{ url_for('static', filename='cheeyappara.jpg')}}" alt="Cheeyappara Waterfalls" />
+        <div class="content">
+          <h2>Cheeyappara Waterfalls</h2>
+          <p>
+            A cascading seven-tiered waterfall, perfect for nature lovers and
+            photographers.
+          </p>
+          <p><strong>Distance:</strong> 29 min (18.3 km) via NH 85</p>
+        </div>
+      </div>
+
+      <div class="content-image-container right">
+        <div class="content">
+          <h2>Valara Waterfalls</h2>
+          <p>
+            Surrounded by dense forests, this waterfall offers a peaceful
+            retreat into nature.
+          </p>
+          <p><strong>Distance:</strong> 27 min (16.5 km) via NH 85</p>
+        </div>
+        <img src="{{ url_for('static', filename='valara.jpg')}}" alt="Valara Waterfalls" />
+      </div>
+
+      <div class="content-image-container left">
+        <img src="{{ url_for('static', filename='Chillithodu.jpg')}}" alt="Chillithodu Waterfalls" />
+        <div class="content">
+          <h2>Chillithodu Waterfalls</h2>
+          <p>
+            A hidden gem ideal for trekking and enjoying unspoiled natural
+            beauty.
+          </p>
+          <p><strong>Distance:</strong> 19 min (9.6 km) via NH 85</p>
+        </div>
+      </div>
+
+      <div class="content-image-container right">
+        <div class="content">
+          <h2>Thalamankuthu Waterfalls</h2>
+          <p>
+            A breathtaking multi-step waterfall known for its pristine
+            surroundings.
+          </p>
+          <p><strong>Distance:</strong> 23 min (10.6 km) via NH 85</p>
+        </div>
+        <img
+          src="{{ url_for('static', filename='thommankuthu-waterfalls.jpg')}}"
+          alt="Thalamankuthu Waterfalls"
+        />
+      </div>
+    </section>
+
+    <section id="Viewpoints">
+      <div class="content-image-container left">
+        <img
+          src="{{ url_for('static', filename='chinnaparakudy-viewpoint2.jpg')}}"
+          alt="Chinnaparakudy View Point"
+        />
+        <div class="content">
+          <h2>Chinnaparakudy View Point</h2>
+          <p>
+            A panoramic viewpoint offering mesmerizing views of the hills and
+            valleys.
+          </p>
+          <p><strong>Distance:</strong> 7 min (850 m) via NH 85</p>
+        </div>
+      </div>
+
+      <div class="content-image-container right">
+        <div class="content">
+          <h2>Pettimudy View Point</h2>
+          <p>
+            An ideal spot to witness spectacular sunrises and sunsets over the
+            Western Ghats.
+          </p>
+          <p><strong>Distance:</strong> 7 min (850 m) via NH 85</p>
+        </div>
+        <img src="{{ url_for('static', filename='pettimudi.jpg')}}" alt="Pettimudy View Point" />
+      </div>
+
+      <div class="content-image-container left">
+        <img
+          src="{{ url_for('static', filename='Kuthirakuthi Hill Top.jpg')}}"
+          alt="Kuthirakuthi Hill Top"
+        />
+        <div class="content">
+          <h2>Kuthirakuthi Hill Top</h2>
+          <p>
+            A hilltop offering breathtaking views and a peaceful environment for
+            hikers.
+          </p>
+          <p><strong>Distance:</strong> 22 min (14.6 km) via NH 85</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="bridge">
+      <div class="content-image-container right">
+        <div class="content">
+          <h2>Kanjiraveli Hanging Bridge</h2>
+          <p>
+            Suspended over lush green landscapes, this bridge offers a thrilling
+            experience for adventure seekers.
+          </p>
+          <p><strong>Distance:</strong> 1 hr (35.6 km) via NH 85</p>
+        </div>
+        <img src="{{ url_for('static', filename='10.jpg')}}" alt="Kanjiraveli Hanging Bridge" />
+      </div>
+    </section>
+
+    <section id="cave">
+      <div class="content-image-container left">
+        <img src="{{ url_for('static', filename='Kuthirayala Cave (2).jpg')}}" alt="Kuthirayala Cave" />
+        <div class="content">
+          <h2>Kuthirayala Cave</h2>
+          <p>
+            A historic cave known for its unique rock formations and serene
+            ambiance.
+          </p>
+          <p><strong>Distance:</strong> 13 min (3.9 km) via NH 85</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Adimaly Tourism. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

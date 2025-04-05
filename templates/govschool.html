@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Schools in Adimali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .school {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        img {
+            width: 640px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Government Schools in Adimali</h1>
+    
+    <div class="school">
+        <h2>Government High School, Adimali</h2>
+        <img src="{{ url_for('static', filename='ghs adimali.jpg')}}" alt="GHS Adimali">
+        <p>Established in 1949 and upgraded to a high school in 1980, this institution offers education from classes I to X.</p>
+    </div>
+    
+    <div class="school">
+        <h2>Government High School, Machiplavu</h2>
+        <img src="{{ url_for('static', filename='ghs machiplavu.jpeg')}}" alt="GHS Machiplavu">
+        <p>A well-known government school in Machiplavu, providing quality education under the Kerala state syllabus.</p>
+    </div>
+    
+    <div class="school">
+        <h2>GVHSS Deviyar Colony</h2>
+        <img src="{{ url_for('static', filename='gvhss deviyar colony.jpg')}}" alt="GVHSS Deviyar Colony">
+        <p>A vocational higher secondary school in Deviyar Colony, offering various courses for students.</p>
+    </div>
+    
+    <div class="school">
+        <h2>Tribal High School, Mannamkandam</h2>
+        <img src="{{ url_for('static', filename='tribal hs mannamkandam.jpg')}}" alt="Tribal HS Mannamkandam">
+        <p>This school focuses on providing education to tribal students in the Mannamkandam region.</p>
+    </div>
+</body>
+</html>
